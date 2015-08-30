@@ -36,8 +36,6 @@
     <Compile Include="routes.py" />
     <Compile Include="sessionDAO.py" />
     <Compile Include="userDAO.py" />
-    <Compile Include="validate.py" />
-    <Compile Include="validate_blog.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />
@@ -47,6 +45,7 @@
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="indexes.txt" />
     <Content Include="requirements.txt" />
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
