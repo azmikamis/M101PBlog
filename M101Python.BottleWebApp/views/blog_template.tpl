@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Blog</title>
+<title>My Blog</title>
 </head>
 <body>
 
@@ -28,14 +28,15 @@ Comments:
 <em>Filed Under</em>: 
 %if ('tags' in post):
 %for tag in post['tags'][0:1]:
-{{tag}}
+<a href="/tag/{{tag}}">{{tag}}</a>
 %for tag in post['tags'][1:]:
-, {{tag}}
+, <a href="/tag/{{tag}}">{{tag}}</a>
 %end
 %end
 
 <p>
 %end
-
 </body>
 </html>
+
+

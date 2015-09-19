@@ -80,7 +80,7 @@ class UserDAO:
             user['email'] = email
 
         try:
-            self.users.insert_one(user)
+            self.users.insert(user, safe=True)
         except pymongo.errors.OperationFailure:
             print "oops, mongo error"
             return False

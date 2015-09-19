@@ -19,9 +19,9 @@ Posted {{post['date']}}<i> By {{post['author']}}</i><br>
 <em>Filed Under</em>: 
 %if ('tags' in post):
 %for tag in post['tags'][0:1]:
-{{tag}}
+<a href="/tag/{{tag}}">{{tag}}</a>
 %for tag in post['tags'][1:]:
-, {{tag}}
+, <a href="/tag/{{tag}}">{{tag}}</a>
 %end
 %end
 %end
@@ -34,7 +34,11 @@ Comments:
 %numComments = 0
 %end
 %for i in range(0, numComments):
+<form action="/like" method="POST">
+<input type="hidden" name="permalink", value="{{post['permalink']}}">
+<input type="hidden" name="comment_ordinal", value="{{i}}">
 Author: {{post['comments'][i]['author']}}<br>
+Likes: {{post['comments'][i]['num_likes']}} <input type="submit" value="Like"></form><br>
 {{post['comments'][i]['body']}}<br>
 <hr>
 %end
@@ -49,6 +53,7 @@ Author: {{post['comments'][i]['author']}}<br>
 <b>Comment</b><br>
 <textarea name="commentBody" cols="60" rows="10">{{comment['body']}}</textarea><br>
 <input type="submit" value="Submit">
+</form>
 </ul>
 </body>
 </html>

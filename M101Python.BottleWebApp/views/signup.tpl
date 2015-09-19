@@ -1,5 +1,16 @@
-% rebase('layout.tpl', title='Signup')
+<!DOCTYPE html>
 
+<html>
+  <head>
+    <title>Sign Up</title>
+    <style type="text/css">
+      .label {text-align: right}
+      .error {color: red}
+    </style>
+
+  </head>
+
+  <body>
     Already a user? <a href="/login">Login</a><p>
     <h2>Signup</h2>
     <form method="post">
@@ -59,4 +70,6 @@
 
       <input type="submit">
     </form>
+  </body>
 
+</html>
